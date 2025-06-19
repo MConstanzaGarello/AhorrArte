@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const { sequelize } = require('./modelos');
-
 const usuarioRutas = require('./rutas/usuarioRutas');
 const autenticacionRutas = require('./rutas/autenticacionRutas');
 const transaccionRutas = require('./rutas/transaccionRutas');
@@ -18,8 +17,12 @@ app.use('/api/transacciones', transaccionRutas);
 app.use('/api/categorias', categoriaRutas);
 app.use('/api/presupuestos', presupuestoRutas);
 
-sequelize.sync().then(() => {
-  app.listen(process.env.PORT, () =>
-    console.log(`Servidor corriendo en puerto ${process.env.PORT}`)
-  );
-});
+sequelize.sync({ alter: true }) 
+  .then(() => {
+    app.listen(process.env.PORT, () =>
+      console.log('Servidor corriendo en puerto ${process.env.PORT}')
+    );
+  })
+  .catch(error => {
+    console.error('Error sincronizando la base de datos:', error);
+  });
