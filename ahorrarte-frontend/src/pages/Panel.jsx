@@ -77,7 +77,7 @@ function Panel() {
       const guardada = await res.json();
       setTransacciones([...transacciones, guardada]);
 
-      // Limpiar formulario
+      
       setFecha("");
       setMonto("");
       setCategoria(categorias[0]);
@@ -150,7 +150,7 @@ function Panel() {
 
   return (
     <main className="panel-container">
-      {/* Registrar transacción */}
+      
       <section className="card">
         <h2>Registrar gasto o ingreso</h2>
         <form onSubmit={handleTransaccion}>
@@ -202,7 +202,7 @@ function Panel() {
         </form>
       </section>
 
-      {/* Historial de transacciones */}
+      
       <section className="card">
         <h2>Historial de transacciones</h2>
         <ul className="historial">
