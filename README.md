@@ -1,2 +1,2 @@
-#Trabajo práctico N°4 - Desarrollo de Software
-INTEGRANTES: Ferrero Agustin-Garello Constanza-Hollmann Catalina
+#TRABAJO PRÁCTICO N°4 - Desarrollo de Software
+#INTEGRANTES: Ferrero Agustin - Garello María Constanza - Hollmann Catalina
